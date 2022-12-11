@@ -4,7 +4,9 @@
   "description": "Test automation project",
   "main": "index.js",
   "scripts": {
-    "open": "npx cypress open"
+    "open": "npx cypress open",
+    "test": "npx cypress run",
+    "test:auth": "npx cypress run --spec 'cypress/e2e/test/auth.cy.js'"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/kxngHunter/Test-automation-project#readme",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "cypress": "^12.0.2"
   },
   "dependencies": {
