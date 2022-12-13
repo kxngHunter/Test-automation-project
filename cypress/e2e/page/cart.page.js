@@ -1,8 +1,9 @@
+import routesData from "../data/routes";
 class Cart {
   //#region Selectors
 
-  get cartIcon() {
-    return ".shopping_cart_link";
+  get cartNavBtn() {
+    return "#top-cart";
   }
 
   get cartItemsName() {
@@ -28,6 +29,9 @@ class Cart {
   get cartReturnBtn() {
     return "button.snipcart-modal__close";
   }
+  get cartTotal() {
+    return "span.snipcart-summary-fees__amount.snipcart-summary-fees__amount--highlight";
+  }
 
   //#endregion
 
@@ -37,9 +41,21 @@ class Cart {
     cy.get(addToCartBtn).scrollIntoView();
     cy.wait(1600);
     cy.get(addToCartBtn).should("be.visible");
-    cy.get(addToCartBtn).click();
+    cy.get(addToCartBtn).trigger("click");
+    cy.wait(1600);
+    const element = cy.$$(this.cartPopupTitle).length;
+    if (element > 0) {
+      cy.get(this.cartPopupTitle)
+        .should("be.visible")
+        .and("include.text", "Cart summary");
+    } else {
+      cy.url().should("contain", routesData.cart);
+    }
   }
-
+  openCart() {
+    cy.get(this.cartNavBtn).should("be.visible").trigger("click");
+    cy.wait(1600);
+  }
   closeCart() {
     const element = cy.$$(this.cartPopupCloseBtn).length;
     if (element > 0) {

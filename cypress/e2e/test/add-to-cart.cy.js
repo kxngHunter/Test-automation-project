@@ -21,14 +21,6 @@ describe("Add To Cart", () => {
   it("Verify that a user can add a single product to cart", () => {
     const product = products[productIndex];
     Cart.addToCart(product.name);
-    const element = cy.$$(Cart.cartPopupTitle).length;
-    if (element > 0) {
-      cy.get(Cart.cartPopupTitle)
-        .should("be.visible")
-        .and("include.text", "Cart summary");
-    } else {
-      cy.url().should("contain", routesData.cart);
-    }
     cy.get(Cart.cartItemsName)
       .should("have.length", 1)
       .and("include.text", product.name);
@@ -46,14 +38,6 @@ describe("Add To Cart", () => {
       .invoke("val")
       .should("eq", quantity.toString());
     Cart.addToCart(product.name);
-    const element = cy.$$(Cart.cartPopupTitle).length;
-    if (element > 0) {
-      cy.get(Cart.cartPopupTitle)
-        .should("be.visible")
-        .and("include.text", "Cart summary");
-    } else {
-      cy.url().should("contain", routesData.cart);
-    }
     cy.get(Cart.cartItemsName)
       .should("have.length", 1)
       .and("include.text", product.name);
@@ -106,14 +90,6 @@ describe("Add To Cart", () => {
       .children("img")
       .click();
     Cart.addToCart(product.name);
-    const element = cy.$$(Cart.cartPopupTitle).length;
-    if (element > 0) {
-      cy.get(Cart.cartPopupTitle)
-        .should("be.visible")
-        .and("include.text", "Cart summary");
-    } else {
-      cy.url().should("contain", routesData.cart);
-    }
     cy.get(Cart.cartItemsName)
       .should("have.length", 1)
       .and("include.text", product.name);
