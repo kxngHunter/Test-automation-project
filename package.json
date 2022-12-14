@@ -7,7 +7,8 @@
     "open": "npx cypress open",
     "test": "npx cypress run",
     "test:auth": "npx cypress run --spec 'cypress/e2e/test/auth.cy.js'",
-    "test:add-to-cart": "npx cypress run --spec 'cypress/e2e/test/add-to-cart.cy.js'"
+    "test:add-to-cart": "npx cypress run --spec 'cypress/e2e/test/add-to-cart.cy.js'",
+    "test:cart": "npx cypress run --spec 'cypress/e2e/test/cart.cy.js'"
   },
   "repository": {
     "type": "git",
