@@ -1,6 +1,6 @@
 import Auth from "../page/auth.page";
 import Cart from "../page/cart.page";
-import routesData from "../data/routes";
+import ProductDetail from "../page/detail.page";
 import { users } from "../data/users";
 const validUser = users["valid"];
 let products = [];
@@ -79,16 +79,7 @@ describe("Add To Cart", () => {
   });
   it("Verify that a user can add a product to cart from the product details page", () => {
     const product = products[productIndex];
-    cy.get("p")
-      .contains(product.name)
-      .parents()
-      .eq(3)
-      .children()
-      .first()
-      .children()
-      .first()
-      .children("img")
-      .click();
+    ProductDetail.viewProduct(product.name);
     Cart.addToCart(product.name);
     cy.get(Cart.cartItemsName)
       .should("have.length", 1)

@@ -1,10 +1,17 @@
 import Auth from "../page/auth.page";
 import routesData from "../data/routes";
+import generator from "generate-password";
 import { users } from "../data/users";
 import { faker } from "@faker-js/faker";
 describe("Registration", () => {
   const email = faker.internet.email();
-  const password = faker.internet.password(8, false, /^[a-zA-Z1-9]/);
+  const password = generator.generate({
+    uppercase: true,
+    lowercase: true,
+    numbers: true,
+    length: 8,
+    strict: true,
+  });
   beforeEach(() => {
     cy.visit("/");
   });

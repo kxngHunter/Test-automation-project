@@ -9,7 +9,8 @@
     "test:auth": "npx cypress run --spec 'cypress/e2e/test/auth.cy.js'",
     "test:add-to-cart": "npx cypress run --spec 'cypress/e2e/test/add-to-cart.cy.js'",
     "test:cart": "npx cypress run --spec 'cypress/e2e/test/cart.cy.js'",
-    "test:home": "npx cypress run --spec 'cypress/e2e/test/home.cy.js'"
+    "test:home": "npx cypress run --spec 'cypress/e2e/test/home.cy.js'",
+    "test:product-detail": "npx cypress run --spec 'cypress/e2e/test/product-detail.cy.js'"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
   "homepage": "https://github.com/kxngHunter/Test-automation-project#readme",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "cypress": "^12.0.2"
+    "cypress": "^12.0.2",
+    "generate-password": "^1.7.0"
   },
   "dependencies": {
     "dotenv": "^16.0.3"
