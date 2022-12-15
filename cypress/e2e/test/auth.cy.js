@@ -10,6 +10,7 @@ describe("Registration", () => {
     lowercase: true,
     numbers: true,
     length: 8,
+    strict: true,
   });
   beforeEach(() => {
     cy.visit("/");
