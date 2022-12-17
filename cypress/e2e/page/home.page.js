@@ -30,6 +30,9 @@ class Home {
   get productCategories() {
     return "div[id^='product'] div span";
   }
+  get resetBtn() {
+    return "#reset";
+  }
   //#endregion
 
   //#region Methods
@@ -44,6 +47,15 @@ class Home {
     cy.wait(1200);
     cy.get(this.selectCategoryDropDown).select(category);
     cy.wait(1200);
+  }
+  search(input) {
+    cy.get(this.searchField).scrollIntoView();
+    cy.wait(1200);
+    cy.get(this.searchField).type(input);
+    //cy.wait(1200);
+  }
+  resetFilters() {
+    cy.get(this.resetBtn).should("be.visible").focus().click();
   }
   //#endregion
 }
