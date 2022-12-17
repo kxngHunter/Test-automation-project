@@ -7,7 +7,7 @@ const socialMediaLinks = [
   "https://www.linkedin.com/company/qualityworks-consulting-group-llc",
   "https://twitter.com/qualityworkscg",
 ];
-describe("HomePage", () => {
+describe("Contact", () => {
   beforeEach(() => {
     cy.visit("/");
     Auth.login(validUser.email, validUser.password);
