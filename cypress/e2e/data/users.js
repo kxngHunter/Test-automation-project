@@ -19,4 +19,37 @@ const users = {
       "Verify that a user cannot login with incorrect email and password",
   },
 };
-module.exports = { users };
+const usersInfo = [
+  {
+    firstName: "Test",
+    lastName: "Test",
+    email: users["valid"].email,
+    address: "Test Street",
+    suite: "23T",
+    city: "Toronto",
+    country: "Canada",
+    province: "Alberta",
+    countryCode: "CA",
+    provinceCode: "AB",
+    postalCode: "00000",
+    valid: true,
+    testTitle:
+      "Verify that a user can fill out the billing section correctly and move to the payment section",
+  },
+  {
+    firstName: "Test",
+    lastName: "Test",
+    email: null,
+    address: "Test Street",
+    suite: "23T",
+    city: "Toronto",
+    country: "Canada",
+    countryCode: "CA",
+    provinceCode: "AB",
+    province: "Alberta",
+    postalCode: "00000",
+    testTitle:
+      "Verify that a user is shown an error message if they didn't provide all the required information for the billing section",
+  },
+];
+module.exports = { users, usersInfo };
