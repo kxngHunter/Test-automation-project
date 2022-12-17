@@ -5,7 +5,7 @@ import { users } from "../data/users";
 const validUser = users["valid"];
 let products = [];
 let productIndex = 0;
-describe("Filter and sort", () => {
+describe("Search", () => {
   beforeEach(() => {
     cy.visit("/");
     Auth.login(validUser.email, validUser.password);
