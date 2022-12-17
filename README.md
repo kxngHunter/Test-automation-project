@@ -46,4 +46,7 @@ $ npm run test:search
 
 # To run the contact test
 $ npm run test:contact
+
+# To run the favourites test
+$ npm run test:favourites
 ```
