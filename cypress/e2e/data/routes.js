@@ -3,4 +3,5 @@ module.exports = {
   cart: "/cart",
   checkout: "/checkout",
   order: "/order",
+  contact: "/contact",
 };

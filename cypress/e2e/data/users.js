@@ -52,4 +52,33 @@ const usersInfo = [
       "Verify that a user is shown an error message if they didn't provide all the required information for the billing section",
   },
 ];
-module.exports = { users, usersInfo };
+const contactFormData = [
+  {
+    firstName: "Test",
+    lastName: "Test",
+    email: users["valid"].email,
+    valid: true,
+    testTitle: "Verify that a user can send a message",
+    subject: "Hi",
+    message: "Testing contact form",
+  },
+  {
+    firstName: "Test",
+    lastName: "Test",
+    email: null,
+    testTitle:
+      "Verify that a user cannot send a message without filling out the required fields",
+    subject: "Hi",
+    message: "Testing contact form",
+  },
+  {
+    firstName: "Test",
+    lastName: "Test",
+    email: "invalid email",
+    testTitle:
+      "Verify that a user cannot send a message with an invalid email address",
+    subject: "Hi",
+    message: "Testing contact form",
+  },
+];
+module.exports = { users, usersInfo, contactFormData };
