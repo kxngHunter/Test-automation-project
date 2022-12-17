@@ -32,17 +32,20 @@ class Cart {
   get cartTotal() {
     return "span.snipcart-summary-fees__amount.snipcart-summary-fees__amount--highlight";
   }
+  get checkoutBtn() {
+    return "button[class='snipcart-button-primary snipcart-base-button is-icon-right']";
+  }
 
   //#endregion
 
   //#region Methods
   addToCart(itemName) {
-    let addToCartBtn = `[data-item-name='${itemName}']`;
+    let addToCartBtn = `button[data-item-name='${itemName}']`;
     cy.get(addToCartBtn).scrollIntoView();
-    cy.wait(1600);
+    cy.wait(2000);
     cy.get(addToCartBtn).should("be.visible");
-    cy.get(addToCartBtn).trigger("click");
-    cy.wait(1600);
+    cy.get(addToCartBtn).focus().click();
+    cy.wait(2000);
     const element = cy.$$(this.cartPopupTitle).length;
     if (element > 0) {
       cy.get(this.cartPopupTitle)
@@ -54,7 +57,7 @@ class Cart {
   }
   openCart() {
     cy.get(this.cartNavBtn).should("be.visible").trigger("click");
-    cy.wait(1600);
+    cy.wait(2000);
   }
   closeCart() {
     const element = cy.$$(this.cartPopupCloseBtn).length;
@@ -100,6 +103,14 @@ class Cart {
 
   productQuantity(index) {
     return `${this.product(index)} input`;
+  }
+
+  checkout() {
+    cy.get(this.checkoutBtn).scrollIntoView();
+    cy.wait(2000);
+    cy.get(this.checkoutBtn).should("be.visible");
+    cy.get(this.checkoutBtn).focus().trigger("click");
+    cy.wait(2000);
   }
   //#endregion
 }
