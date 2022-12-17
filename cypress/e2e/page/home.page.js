@@ -25,7 +25,7 @@ class Home {
     return "#search";
   }
   get productNames() {
-    return "div[id^='product'] p:only-child";
+    return "div[id^='product'] p.css-1n64n71";
   }
   get productCategories() {
     return "div[id^='product'] div span";
