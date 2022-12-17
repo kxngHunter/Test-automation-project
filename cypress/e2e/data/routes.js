@@ -4,4 +4,5 @@ module.exports = {
   checkout: "/checkout",
   order: "/order",
   contact: "/contact",
+  favourites: "/favorites",
 };
