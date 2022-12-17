@@ -11,7 +11,8 @@
     "test:cart": "npx cypress run --spec 'cypress/e2e/test/cart.cy.js'",
     "test:home": "npx cypress run --spec 'cypress/e2e/test/home.cy.js'",
     "test:product-detail": "npx cypress run --spec 'cypress/e2e/test/product-detail.cy.js'",
-    "test:checkout": "npx cypress run --spec 'cypress/e2e/test/checkout.cy.js'"
+    "test:checkout": "npx cypress run --spec 'cypress/e2e/test/checkout.cy.js'",
+    "test:sort": "npx cypress run --spec 'cypress/e2e/test/sort.cy.js'"
   },
   "repository": {
     "type": "git",
